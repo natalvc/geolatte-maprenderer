@@ -118,14 +118,7 @@
             <artifactId>batik-svg-dom</artifactId>
             <version>1.9.1</version>
         </dependency>
-
-        <!-- add explicitly so we don't have to use the java.xml.bind module on JDK 9+ -->
-        <dependency>
-            <groupId>javax.xml.bind</groupId>
-            <artifactId>jaxb-api</artifactId>
-            <version>2.3.0</version>
-        </dependency>
-
+        
         <!-- dependencies for the ehcache -->
         <dependency>
             <groupId>net.sf.ehcache</groupId>
@@ -276,15 +269,20 @@
                 <configuration>
                     <source>10</source>
                     <target>10</target>
+                    <compilerArgs>
+                        <arg>--add-modules=java.xml.bind</arg>
+                    </compilerArgs>
                 </configuration>
             </plugin>
-            <!--<plugin>-->
-            <!--<artifactId>maven-surefire-plugin</artifactId>-->
-            <!--&lt;!&ndash; Must be version > 2.7 because of issue http://jira.codehaus.org/browse/SUREFIRE-482 &ndash;&gt;-->
-            <!--<version>2.7</version>-->
-            <!--<configuration>-->
-            <!--</configuration>-->
-            <!--</plugin>-->
+            <plugin>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>2.21.0</version>
+            <configuration>
+                <argLine>
+                    --add-modules java.xml.bind
+                </argLine>
+            </configuration>
+            </plugin>
         </plugins>
     </build>
 </project>
