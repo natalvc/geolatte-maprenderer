@@ -118,7 +118,7 @@
             <artifactId>batik-svg-dom</artifactId>
             <version>1.9.1</version>
         </dependency>
-        
+
         <!-- dependencies for the ehcache -->
         <dependency>
             <groupId>net.sf.ehcache</groupId>

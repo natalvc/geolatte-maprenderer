@@ -28,9 +28,8 @@ import com.vividsolutions.jts.geom.PrecisionModel;
 import org.geolatte.geom.C2D;
 import org.geolatte.geom.Envelope;
 import org.geolatte.geom.crs.CoordinateReferenceSystems;
-import org.geolatte.geom.crs.CrsId;
 import org.geolatte.geom.crs.SingleCoordinateReferenceSystem;
-import org.geolatte.maprenderer.java2D.JAIMapGraphics;
+import org.geolatte.maprenderer.java2D.AWTMapGraphics;
 import org.geolatte.maprenderer.java2D.PerpendicularOffsetStroke;
 import org.geolatte.maprenderer.map.MapGraphics;
 import org.geolatte.maprenderer.shape.ShapeAdapter;
@@ -128,7 +127,7 @@ public class TestOffsetRendering {
 
         for (int i = 0; i < angles.length; i++) {
             System.out.println("i = " + i);
-            MapGraphics mapGraphics = new JAIMapGraphics(dim, extent);
+            MapGraphics mapGraphics = new AWTMapGraphics( dim, extent);
 
             LineString line = generateLineStrings(angles[i], leftToRight);
             mapGraphics.setStroke(stroke);
