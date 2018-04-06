@@ -19,7 +19,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <lwjgl.version>3.1.6</lwjgl.version>
+        <lwjgl.version>3.1.7-SNAPSHOT</lwjgl.version>
         <lwjgl.natives>natives-macos</lwjgl.natives>
     </properties>
 
